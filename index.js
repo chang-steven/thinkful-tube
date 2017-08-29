@@ -38,19 +38,18 @@ $.getJSON(youTubeURL, paramsObject, callback );
 //callback function to display search results from youTube API
 function renderResults(result) {
   console.log('`renderResults` ran');
-  return
-  `<div>
-      <h2></h2>
+  console.log(result.snippet.thumbnails.default);
+
+  return`<div>
+      <h2>${result.snippet.title}</h2>
       <p>${result.snippet.description}</p>
-      <img src="${result.thumbnails.default}">
-  </div>`
+      <img src='${result.snippet.thumbnails.default.url}', width='${result.snippet.thumbnails.default.width}' height= '${result.snippet.thumbnails.default.height}'>
+  </div>`;
 };
 
 function displaySearchResults(result) {
   console.log('`displaySearchResults` ran');
-  console.log(result);
-  let text = renderResults(result);
+  let text = result.items.map( (item, index) =>  renderResults(item) );
   console.log(text);
-  $('#js-search-results').append(text);
-
+  $('#js-search-results').html  (text);
 };
