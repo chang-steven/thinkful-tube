@@ -1,0 +1,18 @@
+body {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+}
+
+input {
+  size: 10em;
+  height: 2em;
+  width: 40em;
+  font-size: 14px;
+}
+
+button {
+  margin-top: 1em;
+  height: 30px;
+  border-radius: 10%;
+}
