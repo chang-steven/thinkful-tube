@@ -43,9 +43,13 @@ function renderResults(result) {
   return`<div>
       <h2>${result.snippet.title}</h2>
       <p>${result.snippet.description}</p>
-      <img src='${result.snippet.thumbnails.default.url}', width='${result.snippet.thumbnails.default.width}' height= '${result.snippet.thumbnails.default.height}'>
+      <a href="https://www.youtube.com/watch?v=${result.id.videoId}">
+      <img src='${result.snippet.thumbnails.high.url}', width='${result.snippet.thumbnails.high.width}' height= '${result.snippet.thumbnails.high.height}'></a>
   </div>`;
 };
+
+
+
 
 function displaySearchResults(result) {
   console.log('`displaySearchResults` ran');
