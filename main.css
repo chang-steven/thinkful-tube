@@ -1,13 +1,17 @@
-body {
+* {
   box-sizing: border-box;
+}
+
+body {
   font-family: 'Roboto', sans-serif;
   padding: 10px;
+  min-width: 400px;
 }
 
 input {
   size: 10em;
   height: 2em;
-  width: 40em;
+  /*width: 40em;*/
   font-size: 14px;
 }
 
@@ -17,6 +21,6 @@ button {
   border-radius: 10%;
 }
 
-div {
+/*div {
   max-width: 600px;
-}
+}*/
