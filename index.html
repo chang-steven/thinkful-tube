@@ -10,21 +10,18 @@
     <script type="text/javascript" src="index.js"></script>
   </head>
   <body>
-    <main>
-      <header>
-        <h1>Welcome to Thinkful Tube</h1>
-      </header>
-      <form>
-        <h3>Search the youTube library!</h3>
-        <input id="search-input" type="text" placeholder="  e.g. ESPN Top 10">
-        </input>
-      <form>
-      </br>
-      <button id="search-submit-button" type="submit">Search</button>
-
-      <section id="js-search-results">
-      </section>
-
+    <header role="banner">
+      <h1>Welcome to Thinkful Tube</h1>
+    </header>
+      <fieldset>
+        <form role="search">
+          <legend><label for="search-input>"<h3 id="search-header">Search the youTube library!</h3></label></legend>
+          <input aria-labelledby="search-header" id="search-input" type="text" placeholder="  e.g. ESPN Top 10">
+        <form>
+      </fieldset>
+        </br>
+      <button id="search-submit-button" type="submit" aria-label="submit">Search</button>
+    <main role="main" id="js-search-results" aria-live="assertive" hidden>
     </main>
   </body>
 </html>

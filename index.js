@@ -19,17 +19,23 @@ function getDataFromApi(searchObject, callback) {
 
 //callback function to display search results from youTube API
 function renderResults(result) {
-  return`<div>
-      <h2>${result.snippet.title}</h2>
+  return`<div class="results">
+      <h2><a href="https://www.youtube.com/watch?v=${result.id.videoId}">
+      ${result.snippet.title}</a></h2>
       <p>${result.snippet.description}</p>
       <a href="https://www.youtube.com/watch?v=${result.id.videoId}">
-      <img src='${result.snippet.thumbnails.high.url}', width='${result.snippet.thumbnails.high.width}' height= '${result.snippet.thumbnails.high.height}'></a>
+      <img src='${result.snippet.thumbnails.high.url}' alt='${result.snippet.thumbnails.title}', width='${result.snippet.thumbnails.high.width}' height= '${result.snippet.thumbnails.high.height}'></a>
   </div>`;
 }
 
 function displaySearchResults(result) {
+  $('#js-search-results').append(
+    `<div class="resultsPerPage">Showing <strong>${result.pageInfo.resultsPerPage}</strong> of <strong>${result.pageInfo.totalResults}</strong> Search Results
+    </div>`
+  );
   let text = result.items.map(item => renderResults(item));
-  $('#js-search-results').html(text);
+  $('#js-search-results').append(text);
+  $('#js-search-results').prop('hidden', false);
 }
 
 //initiates event listeners
